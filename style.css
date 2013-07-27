@@ -1,0 +1,74 @@
+#GraphContainer {
+    width: 1920px;
+    height: 1200px;
+    overflow: visible;
+    position: absolute;
+}
+
+#NodesContainer {
+    width: 1920px;
+    height: 1200px;
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+}
+
+#EdgesContainer {
+    width: 1920px;
+    height: 1200px;
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+}
+   
+#EventsListener {
+    width: 1920px;
+    height: 1200px;
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+}
+
+.SpeechBalloon {
+    color: rgba(102,051,000,0.9);
+    background: rgba(102,255,000,0.7);
+    font-size: 12px;
+  /*line-height: 0;*/
+    position: absolute;
+    margin : 0px 0px 0px 0px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 10px;
+    z-index: 2;
+    width: auto;
+    height: auto;
+}
+
+.SpeechBalloon:hover {
+    background: rgba(255,204,204,0.7);
+    transition: background 0.3s;
+}
+
+.SpeechBalloon:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    height: 0;
+    width: 0;
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(102,255,000,0.7);
+}
+
+.SpeechBalloon:hover:after {
+    border-top: 10px solid rgba(255,204,204,0.7);
+    transition: border-top 0.3s;
+}
+
+.Edge {
+    stroke: rgba(102,051,000,0.9);
+    stroke-width: 4;
+    stroke-linecap: round;
+    fill: transparent;
+    marker-end: url(#Triangle);
+    z-index: 1;
+}
