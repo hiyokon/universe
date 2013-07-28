@@ -23,24 +23,35 @@ function addNode(){
     var newNode = $('<div>')
         .attr('id', $.now())
         .addClass('SpeechBalloon')
-      //.attr('draggable', true)
-        .attr('contenteditable', true)
         .css({left: x + 'px', top: y + 'px'})
-      //.on('click', function(){ $(this).focus(); })
-        .on('click', function(){
-          //$(this).attr('draggable', false);
-            $(this).attr('contenteditable', true);
+        .attr('tabIndex', -1)
+        .mousedown(function () {
+            $(this).attr('contenteditable', false)
             })
-        .on('blur', function(){
-          //$(this).attr('draggable', true);
-            $(this).attr('contenteditable', false);
+        .click(function () {
+            $(this).focus();
+            })
+        .mouseup(function () {
+            $(this).attr('contenteditable', true)
+            })
+      //.focus(function () {
+      //    $(this).attr('contenteditable', true)
+      //    })
+        .blur(function () {
+            $(this).attr('contenteditable', false)
+            })
+        .hover(function () {
+            $(this).attr('contenteditable', false)
             })
         .on('dragstart', dragstartGetNodeId)
         .on('dragover', dragoverNode)
         .on('drop', dropAddEdge)
         ;
-        console.log($('#GraphContainer'));
     $('#NodesContainer').append(newNode);
+}
+
+function setAttr(element, attribute, value) {
+    element.attr(attribute, value);
 }
 
 function dragstartGetNodeId(){

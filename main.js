@@ -2,17 +2,20 @@ $(document).ready(function init(){
 
     var graph = Object.create(UNIVERSE.graph);
      
+     // Event Setting
     $('#EventsListener')
         .on('dblclick', addNode)
         .on('dragover', dragoverNode)
         .on('drop', dropMoveNode)
         ;
+     
+    // SVG Definition
     var svg = document.getElementById('EdgesContainer');
     var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
     var marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d',
-                      'M ' +  0 +' '+  0
+                     ' M ' +  0 +' '+  0
                     +' L ' + 10 +' '+  5
                     +' L ' +  0 +' '+ 10
                     +' z '
