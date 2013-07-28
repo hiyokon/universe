@@ -1,4 +1,4 @@
-var cs = 'name,color\nmaodka,pink\nhomura,black';
+var csv = 'name,color\nmaodka,pink\nhomura,black';
 var array = _(csv.split('\n')).map(function (str) { return str.split(',') });
 
 var key = _.first(array); // [name,color]
