@@ -1,5 +1,9 @@
-var csv = 'name,color\nmaodka,pink\nhomura,black';
-var array = _(csv.split('\n')).map(function (str) { return str.split(',') });
+var csv = 'name,color\nmaodka,pink\nhomura,black\n';
+var array = _(csv.split('\n'))
+                .chain()
+                .initial()
+                .map(function (str) { return str.split(',') })
+                .value();
 
 var key = _.first(array); // [name,color]
 var vals = _.rest(array); // [['madoka',pink'],['homura',black']]
@@ -8,7 +12,7 @@ var vals = _.rest(array); // [['madoka',pink'],['homura',black']]
 // -> [key,vals]
 // ie [[name,color],[['madoka',pink'],['homura',black']]]
 
-obj = _(vals).map(function (val) { return _.object(key,val); });
+var obj = _(vals).map(function (val) { return _.object(key,val); });
 // ie _.map(vals,function (val) { returun _.object(key,val); });
 // -> [{name:'madoka',color:'pink'},{name:'homura',color:'bck'}]
 
