@@ -2,7 +2,7 @@ var csv = 'name,color\nmaodka,pink\nhomura,black\n';
 var array = _(csv.split('\n'))
                 .chain()
                 .initial()
-                .map(function (str) { return str.split(',') })
+                .map(function (str) { return str.split(','); })
                 .value();
 
 var key = _.first(array); // [name,color]
