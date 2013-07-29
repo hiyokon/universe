@@ -16,11 +16,11 @@ var obj = _(vals).map(function (val) { return _.object(key,val); });
 // ie _.map(vals,function (val) { returun _.object(key,val); });
 // -> [{name:'madoka',color:'pink'},{name:'homura',color:'bck'}]
 
-array = [x,y,z]
-function fun(x,y,z){..;};
-fun(array[0],array[1],array[2]);
+// var array = [x,y,z]
+// function fun(x,y,z){..;};
+// fun(array[0],array[1],array[2]);
 
-appry(fun, array);
+// appry(fun, array);
 // ie appry(fun, [x,y,z]);
 // -> fun(x)(y)(z)();
 
